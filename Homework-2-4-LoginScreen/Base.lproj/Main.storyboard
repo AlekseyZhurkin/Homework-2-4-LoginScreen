@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,6 +35,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Log In">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="U5U-pW-GFd" kind="presentation" modalPresentationStyle="fullScreen" id="bqP-pI-KNU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -46,6 +50,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotUsernameButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="8rZ-dY-uxc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCJ-wO-s4S">
                                         <rect key="frame" x="241" y="0.0" width="125" height="28.333333333333332"/>
@@ -53,6 +60,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotPasswordButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBa-NV-xve"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -68,15 +78,66 @@
                             <constraint firstItem="s7O-Vq-3Ce" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="sMX-vi-roa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="J6f-TD-9m4" id="RF3-9W-H3h"/>
+                        <outlet property="userNameTextField" destination="Mpd-P5-L6v" id="uCg-Hw-EgT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="125.95419847328243" y="-2.1126760563380285"/>
         </scene>
+        <!--Welcome Screen View Controller-->
+        <scene sceneID="cPW-bS-GfR">
+            <objects>
+                <viewController id="U5U-pW-GFd" customClass="WelcomeScreenViewController" customModule="Homework_2_4_LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PHa-lX-HAG">
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlu-V9-TFF">
+                                <rect key="frame" x="181.66666666666666" y="717" width="76.999999999999972" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LkK-zc-tyM" kind="unwind" unwindAction="unwindFor:" id="avH-oi-iFv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVJ-ja-qYl">
+                                <rect key="frame" x="187" y="200" width="66.333333333333314" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dca-Ot-uIV"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="Dlu-V9-TFF" firstAttribute="centerX" secondItem="PHa-lX-HAG" secondAttribute="centerX" id="2Aw-Xg-42N"/>
+                            <constraint firstItem="XVJ-ja-qYl" firstAttribute="centerX" secondItem="PHa-lX-HAG" secondAttribute="centerX" id="6jP-B4-Ty9"/>
+                            <constraint firstItem="XVJ-ja-qYl" firstAttribute="top" secondItem="dca-Ot-uIV" secondAttribute="top" constant="200" id="ZF8-Uz-ffl"/>
+                            <constraint firstItem="dca-Ot-uIV" firstAttribute="bottom" secondItem="Dlu-V9-TFF" secondAttribute="bottom" constant="200" id="tZw-tj-KeS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="XVJ-ja-qYl" id="cvX-Qw-p7j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wE-Mh-vao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="LkK-zc-tyM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="997" y="-3"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
