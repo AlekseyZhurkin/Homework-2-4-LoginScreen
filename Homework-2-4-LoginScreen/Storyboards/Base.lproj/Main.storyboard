@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="125.95419847328243" y="-2.1126760563380285"/>
         </scene>
-        <!--Welcome Screen View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="cPW-bS-GfR">
             <objects>
-                <viewController id="U5U-pW-GFd" customClass="WelcomeScreenViewController" customModule="Homework_2_4_LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U5U-pW-GFd" customClass="WelcomeViewController" customModule="Homework_2_4_LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PHa-lX-HAG">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +137,7 @@
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

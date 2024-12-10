@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class WelcomeScreenViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
