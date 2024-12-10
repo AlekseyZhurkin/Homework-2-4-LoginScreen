@@ -14,7 +14,7 @@
 		D29C500E2D02FB040000E1E6 /* Exceptions for "Homework-2-4-LoginScreen" folder in "Homework-2-4-LoginScreen" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				App/Info.plist,
 			);
 			target = D29C4FFB2D02FB030000E1E6 /* Homework-2-4-LoginScreen */;
 		};
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MB84K2JPJV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Homework-2-4-LoginScreen/Info.plist";
+				INFOPLIST_FILE = "Homework-2-4-LoginScreen/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -179,7 +179,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MB84K2JPJV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Homework-2-4-LoginScreen/Info.plist";
+				INFOPLIST_FILE = "Homework-2-4-LoginScreen/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

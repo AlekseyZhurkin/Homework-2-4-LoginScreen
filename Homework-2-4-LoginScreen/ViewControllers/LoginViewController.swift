@@ -30,7 +30,7 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeScreenVC = segue.destination as? WelcomeScreenViewController
+        let welcomeScreenVC = segue.destination as? WelcomeViewController
         welcomeScreenVC?.user = userNameTextField.text
     }
     
