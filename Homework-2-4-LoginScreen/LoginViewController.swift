@@ -12,17 +12,21 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let user = "1"
-    let password = "1"
+    private let user = "1"
+    private let password = "1"
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard userNameTextField.text == user, passwordTextField.text == password else {
-            ShowAlert(withTitle: "Access Denied!", andMessage: "User name or password is incorrect.\nPlease try again.")
+            showAlert(
+                withTitle: "Access Denied!",
+                andMessage: "User name or password is incorrect.\nPlease try again.") {
+                    self.passwordTextField.text = ""
+                }
             return false
         }
         
@@ -35,24 +39,28 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotUsernameButtonAction() {
-        ShowAlert(withTitle: "User Name Hint", andMessage: "Try this name: \(user)")
+        showAlert(
+            withTitle: "User Name Hint",
+            andMessage: "Try this name: \(user)"
+        )
     }
     
     @IBAction func forgotPasswordButtonAction() {
-        ShowAlert(withTitle: "Password Hint", andMessage: "Try this password: \(password)")
+        showAlert(
+            withTitle: "Password Hint",
+            andMessage: "Try this password: \(password)"
+        )
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        let loginVC = segue.destination as? LoginViewController
-        loginVC?.userNameTextField.text = ""
-        loginVC?.passwordTextField.text = ""
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
     
-    private func ShowAlert(withTitle title: String, andMessage message: String) {
+    private func showAlert(withTitle title: String, andMessage message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.userNameTextField.text = ""
-            self.passwordTextField.text = ""
+            completion?()
         }
         
         alert.addAction(okAction)
